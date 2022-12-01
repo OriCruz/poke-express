@@ -5,12 +5,25 @@ const myStyle = {
     backgroundColor: '#000000',
   };
 
-class MyFirstComponent extends React.Component { render(){
+class Index extends React.Component { render(){
+    const {pokemons} = this.props;
     return (
       <div style={myStyle}>
-        <h1>See All The Pokemon!</h1> 
+        <h1>See All The Pokemon!</h1>
+        <ul>
+            {pokemons.map((pokemon, i)=>{
+                return(
+                    <li>
+                        the{' '}
+                        <a href={`/pokemons/${i}`}>{pokemon.name[0].toUpperCase()+ pokemon.name.slice(1)}
+                        </a>{' '} is {pokemon.img} <br></br>
+                    </li>
+                );
+            })}
+        </ul> 
+
         </div>
       );
     }
   }
-module.exports = MyFirstComponent;
+module.exports = Index;

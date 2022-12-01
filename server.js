@@ -1,11 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const fs = require('fs');
 const pokemon = require('./models/pokemon');
 
 //engine created
-
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine()) 
 
@@ -15,7 +13,7 @@ app.get('/', (req,res)=>{
 });
 //define other routes
 app.get('/pokemon/', (req,res)=>{
-    res.render('Index');
+    res.render('Index', {pokemons:pokemon});
 });
 
 //app listening for port
