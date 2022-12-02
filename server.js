@@ -16,6 +16,10 @@ app.get('/pokemon/', (req,res)=>{
     res.render('Index', {pokemons:pokemon});
 });
 
+app.get('/pokemon/:id', (req,res)=>{
+    res.send(req.params.id);
+});
+
 //app listening for port
 app.listen(port, ()=>{
     console.log('listening on '+port);
