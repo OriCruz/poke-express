@@ -1,14 +1,24 @@
 const React = require('react');
+const pokemon = require('../models/pokemon');
 
-class Show extends React.Component{
+const myStyle = {
+    color: '#8c6d47',
+    backgroundColor: '#E6E6FA',
+  };
+
+class Show extends React.Component { 
     render(){
-        //const pokemons = this.props.pokemons;//gets the properties of the current element of the array
-        return(
-            <div> 
-                show page
-               {/* <h1>{pokemons.name} </h1>  */}
-            </div>
-        );
+    const {pokemons} = this.props;
+    return (
+      <div style={myStyle}>
+        <h1>Gotta Catch 'Em All!</h1>
+        <h2>{pokemons.name}</h2>
+        <img src={pokemons.img.concat('.jpg')}/>
+        go {' '}
+        <a href={`/pokemon/`}> Back </a>
+            
+        </div>
+      );
     }
-}
+  }
 module.exports = Show;
