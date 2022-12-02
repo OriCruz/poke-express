@@ -1,5 +1,4 @@
 const React = require('react');
-const pokemon = require('../models/pokemon');
 
 const myStyle = {
     color: '#8c6d47',
